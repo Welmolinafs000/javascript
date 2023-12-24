@@ -1,5 +1,6 @@
 const buttonconvert = document.querySelector(".button-convert")
 const currencyselectconverted = document.querySelector(".currency-select-converted")
+const currencyselecttoconvert = document.querySelector(".conrrency-select-to-convert")
 
 function convertvalues() {
     const inputcurrencyvalue = document.querySelector(".input-currency").value
@@ -13,15 +14,13 @@ function convertvalues() {
     currencyvaluetoconvert.innerHTML = new Intl.NumberFormat("pt-br", {
         style: "currency",
         currency: "BRL"
-    }).format(inputcurrencyvalue)
+    }).format(inputcurrencyvalue)   // valor para converter fomato  Real brasileiro 
 
     if (currencyselectconverted.value == "dolar") {
         currencyvalueconverted.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD"
         }).format(inputcurrencyvalue / dolartoday)
-
-
     }
 
     if (currencyselectconverted.value == "euro") {
@@ -37,11 +36,12 @@ function convertvalues() {
             currency: "GBP"
         }).format(inputcurrencyvalue / libratoday)
     }
+
 }
 
 function changecurrency() {
     const changeimageconverted = document.querySelector(".img-currency-converted")
-    const currecyconverted = document.querySelector(".currencyconverted")
+    const currecyconverted = document.querySelector(".currency-converted")
 
     if (currencyselectconverted.value == "dolar") {
         changeimageconverted.src = "./assets/dolar.png"
@@ -54,13 +54,19 @@ function changecurrency() {
     }
 
     if (currencyselectconverted.value == "libra") {
-        changeimageconverted.src ="./assets/libra.png"
+        changeimageconverted.src = "./assets/libra.png"
         currecyconverted.innerHTML = "Libra"
     }
 
+    if (currencyselectconverted.value == "real") {
+        changeimageconverted.src = "./assets/real.png"
+        currecyconverted.innerHTML = "Real"
 
 
-    convertvalues()
+    }
+
+convertvalues()
+
 }
 
 buttonconvert.addEventListener("click", convertvalues)
