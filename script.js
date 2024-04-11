@@ -7,10 +7,6 @@ const convertvalues = async () => {
     const currencyvaluetoconvert = document.querySelector(".currency-value-to-convert") // valor do real
     const currencyvalueconverted = document.querySelector(".currency-value") // valor converdido outras moedas
 
-    
-    
-    
-
     const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
 
     const dolartoday = data.USDBRL.high
