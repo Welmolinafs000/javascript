@@ -8,6 +8,10 @@
 
 body {
     background-color: #04073b;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
 }
 
 .logo-convertion {
@@ -31,7 +35,8 @@ main {
     width: 375px;
     border-radius: 20px;
     background: #F4F4F4;
-    margin: auto auto;
+    display: flex;
+    flex-direction: column;
     padding: 44px 24px 23px;
 }
 
